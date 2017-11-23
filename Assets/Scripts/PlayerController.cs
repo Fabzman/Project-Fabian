@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
     public GameObject PlayerCharacter;
-    //private SpriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
 
 	// Use this for initialization
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
     public float speed;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             animator.SetBool("Move", true);
+            spriteRenderer.flipX = false;
         }
 
         else
@@ -34,8 +36,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //SpriteRenderer.SetBool("Flip", true);
-            animator.SetBool("Left", true);
+            spriteRenderer.flipX = true;
+            animator.SetBool("Move", true);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
