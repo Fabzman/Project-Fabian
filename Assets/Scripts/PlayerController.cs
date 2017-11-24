@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject PlayerCharacter;
     private SpriteRenderer spriteRenderer;
+	public float JumpForce = 150f;
+	public float speed;
+	public bool jump;
 
 
 	// Use this for initialization
@@ -18,9 +21,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
-    public float speed;
-	
-	// Update is called once per frame
+    // Update is called once per frame
 	void Update ()
     {
         if (Input.GetKey(KeyCode.RightArrow))
@@ -40,18 +41,23 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Move", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
-            
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			jump = true;
+		}
+	    
 	}
 
     private void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
 
-        Vector2 movement = new Vector2(moveHorizontal, 0.0f);
-        rb.velocity = movement * speed;
+		rb.velocity = new Vector2(moveHorizontal * speed, rb.velocity.y);
+
+		if (jump)
+		{
+			rb.AddForce (Vector2.up * JumpForce, ForceMode2D.Impulse);
+			jump = false;
+		}
     }
 }
