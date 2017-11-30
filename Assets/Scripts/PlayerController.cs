@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // calls components from inspector
     private Animator animator;
     private Rigidbody2D rb;
     public GameObject PlayerCharacter;
     private SpriteRenderer spriteRenderer;
+
+    // character movement
 	public bool jump;
-	public GameObject shot;
+    public float speed;
+    public float JumpForce = 150f;
+
+    // used for fire shot spawn and fire rate
+    public GameObject shot;
 	public Transform AxeShotSpawn;
-	public float JumpForce = 150f;
-	public float speed;
 	public float fireRate;
 	private float nextShot;
 
-	// Use this for initialization
-	void Start ()
+    // checks to see if character is on ground to prevent jumping infinitely
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGrounded;
+    private bool grounded;
+
+
+    // Use this for initialization
+    void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -44,7 +56,7 @@ public class PlayerController : MonoBehaviour
 			AnimationState ("Move", true);
         }
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space) && grounded)
 		{
 			jump = true;
 		}
@@ -83,5 +95,7 @@ public class PlayerController : MonoBehaviour
 			rb.AddForce (Vector2.up * JumpForce, ForceMode2D.Impulse);
 			jump = false;
 		}
+
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
     }
 }
