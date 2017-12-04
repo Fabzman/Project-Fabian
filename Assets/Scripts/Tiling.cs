@@ -10,6 +10,8 @@ public class Tiling : MonoBehaviour {
     public bool rightPlatform = false;
     public bool leftPlatform = false;
     public bool background = false;
+    //public GameObject Enemy;
+    //public Transform EnemySpawn;
     private float spriteWidth = 0f;
     private Camera cam;
     private Transform myTransform;
@@ -62,6 +64,7 @@ public class Tiling : MonoBehaviour {
         Vector3 newPosition = new Vector3(myTransform.position.x + spriteWidth * rightLeft, myTransform.position.y, myTransform.position.z);
         //Instantiating a new platform and storing in a variable
         Transform newPlatform = Instantiate(myTransform, newPosition, myTransform.rotation) as Transform;
+        //GameObject clone = Instantiate(Enemy, EnemySpawn.position, EnemySpawn.rotation);
 
         //if not tilable reverse x to get rid of seams
         if (background == true)
