@@ -7,11 +7,20 @@ public class DestroyWhenHit : MonoBehaviour {
 	private Animator animator;
 	public bool HasDied;
 	private float timer;
+    public int scoreValue;
+    public TextScripting textScripting;
 
 
 	// Use this for initialization
 	void Start () 
 	{
+        // Finds script for score
+        GameObject textScritpingObject = GameObject.FindWithTag("Score");
+        if (textScritpingObject != null)
+        {
+            textScripting = textScritpingObject.GetComponent<TextScripting>();
+        }
+
 		// Set the timer amount once it's connected with the trigger.
 		timer = 0.1f;
 		animator = GetComponent <Animator>();
@@ -30,6 +39,8 @@ public class DestroyWhenHit : MonoBehaviour {
 			// If the timer reaches 0, remove the body
 			if (timer <= 0) 
 			{
+                // Adds score for dead enemy and destroys his prefab
+                textScripting.AddScore (scoreValue);
 				Destroy (gameObject);
 			}
 		}
@@ -37,6 +48,7 @@ public class DestroyWhenHit : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
 	{
+        // If enemy hits boundary does not play enemy explode animation
 		if (other.tag == "Boundary") 
 		{
 			return;
@@ -44,6 +56,7 @@ public class DestroyWhenHit : MonoBehaviour {
 
 		if (other.tag == "Shot") 
 		{
+            // If enemy hits shot plays enemy explode animation
 			animator.Play ("Enemy_Explode");
 			HasDied = true;
 		}
