@@ -204,7 +204,9 @@ MonoBehaviour:
   restartText: {fileID: 1185079802}
   gameOverText: {fileID: 1784406601}
   startText: {fileID: 2071347357}
+  winText: {fileID: 0}
   PlayerCharacter: {fileID: 0}
+  Winner: {fileID: 0}
   HasDied: 0
 --- !u!1 &288879948
 GameObject:
@@ -581,6 +583,8 @@ MonoBehaviour:
   restartText: {fileID: 1185079802}
   gameOverText: {fileID: 1784406601}
   startText: {fileID: 2071347357}
+  GameOver: {fileID: 1784406600}
+  Restart: {fileID: 1185079801}
   HasDied: 0
 --- !u!1 &443326273
 GameObject:
@@ -640,6 +644,7 @@ Transform:
   - {fileID: 1185079803}
   - {fileID: 2071347358}
   - {fileID: 1784406602}
+  - {fileID: 2113842448}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -658,7 +663,9 @@ MonoBehaviour:
   restartText: {fileID: 1185079802}
   gameOverText: {fileID: 1784406601}
   startText: {fileID: 2071347357}
+  winText: {fileID: 0}
   PlayerCharacter: {fileID: 401691598}
+  Winner: {fileID: 2113842447}
   HasDied: 1
 --- !u!1 &846902654
 GameObject:
@@ -784,14 +791,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!132 &1185079802
 GUIText:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1185079801}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Text: 
   m_Anchor: 1
@@ -827,7 +834,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1185079801}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9699c2c26d81d4846a08ab2a71732081, type: 3}
   m_Name: 
@@ -836,7 +843,9 @@ MonoBehaviour:
   restartText: {fileID: 1185079802}
   gameOverText: {fileID: 1784406601}
   startText: {fileID: 2071347357}
-  PlayerCharacter: {fileID: 0}
+  winText: {fileID: 0}
+  PlayerCharacter: {fileID: 401691598}
+  Winner: {fileID: 0}
   HasDied: 0
 --- !u!1 &1342080755
 GameObject:
@@ -891,6 +900,8 @@ MonoBehaviour:
   restartText: {fileID: 1185079802}
   gameOverText: {fileID: 1784406601}
   startText: {fileID: 2071347357}
+  GameOver: {fileID: 1784406600}
+  Restart: {fileID: 1185079801}
   HasDied: 0
 --- !u!114 &1342080758
 MonoBehaviour:
@@ -1012,7 +1023,9 @@ MonoBehaviour:
   restartText: {fileID: 1185079802}
   gameOverText: {fileID: 1784406601}
   startText: {fileID: 2071347357}
+  winText: {fileID: 0}
   PlayerCharacter: {fileID: 401691598}
+  Winner: {fileID: 0}
   HasDied: 0
 --- !u!1 &1481617458
 GameObject:
@@ -1130,6 +1143,8 @@ MonoBehaviour:
   restartText: {fileID: 1185079802}
   gameOverText: {fileID: 1784406601}
   startText: {fileID: 2071347357}
+  GameOver: {fileID: 0}
+  Restart: {fileID: 0}
   HasDied: 0
 --- !u!1 &1682032692
 GameObject:
@@ -1256,14 +1271,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!132 &1784406601
 GUIText:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1784406600}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Text: 
   m_Anchor: 1
@@ -1299,7 +1314,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1784406600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9699c2c26d81d4846a08ab2a71732081, type: 3}
   m_Name: 
@@ -1308,7 +1323,9 @@ MonoBehaviour:
   restartText: {fileID: 1185079802}
   gameOverText: {fileID: 1784406601}
   startText: {fileID: 2071347357}
+  winText: {fileID: 0}
   PlayerCharacter: {fileID: 401691598}
+  Winner: {fileID: 0}
   HasDied: 0
 --- !u!1 &1784749640
 GameObject:
@@ -1567,6 +1584,58 @@ Transform:
   m_Father: {fileID: 465365928}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2113842447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2113842448}
+  - component: {fileID: 2113842449}
+  m_Layer: 0
+  m_Name: Win Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2113842448
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2113842447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.807752, y: -1.991208, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 465365928}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!132 &2113842449
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2113842447}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Win text
+  m_Anchor: 1
+  m_Alignment: 1
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 100
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &2116608620
 GameObject:
   m_ObjectHideFlags: 0

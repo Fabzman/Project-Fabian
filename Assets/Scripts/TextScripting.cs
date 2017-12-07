@@ -8,7 +8,9 @@ public class TextScripting : MonoBehaviour {
     public GUIText restartText;
     public GUIText gameOverText;
     public GUIText startText;
+    public GUIText winText;
     public GameObject PlayerCharacter;
+    public GameObject Winner;
     public bool HasDied;
     private int score;
     private bool gameOver;
@@ -44,14 +46,14 @@ public class TextScripting : MonoBehaviour {
 
         if (HasDied)
         {
-            // Has died bool and gameover bool is set to true, text should play when has died is set to true but is not working properly
+            // Has died bool and gameover bool is set to true
             gameOverText.text = "You Failed to Save the Village";
             gameOver = true;
         }
 
         if (gameOver)
         {
-            // Game over bool and restart bool is true, text should play when game over bool is set to true but is not working properly
+            // Game over bool and restart bool is true
             restartText.text = "Press 'R' to Try Again";
             restart = true;
         }
@@ -77,5 +79,10 @@ public class TextScripting : MonoBehaviour {
     {
         // Adds text to score when an enemy is killed
         scoretext.text = "Score: " + score;
+
+        //if (score >= 1000)
+       // {
+           // winText.text = "You've Saved the Village";
+        //}
     }
 }

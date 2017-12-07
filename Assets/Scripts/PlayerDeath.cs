@@ -10,6 +10,8 @@ public class PlayerDeath : MonoBehaviour
     public GUIText restartText;
     public GUIText gameOverText;
     public GUIText startText;
+    public GameObject GameOver;
+    public GameObject Restart;
     public bool HasDied;
     private int score;
     private bool gameOver;
@@ -42,19 +44,21 @@ public class PlayerDeath : MonoBehaviour
     {
         if (gameOver)
         {
-            // when gameOver bool is true will set restart bool to true and should play game over text but is not working properly
+            // When gameOver bool is true will set restart bool to true and play game over text
+            GameOver.SetActive(true);
             gameOverText.text = "You Failed to Save the Village";
             restart = true;
         }
 
         if (restart)
         {
+            Restart.SetActive(true);
+        }
             if (Input.GetKey(KeyCode.R))
             {
-                // when restart bool is true will allow player to restart level by pressing 'R" and should play restart text but is not working properly
+                // When restart bool is true will allow player to restart level by pressing 'R" and will play restart text
                 restartText.text = "Press 'R' to Try Again";
                 Application.LoadLevel(Application.loadedLevel);
             }
         }
     }
-}
