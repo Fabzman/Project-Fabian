@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private bool grounded;
 
 
+	public PlayerDeath playerDeath;
+
     // Use this for initialization
     void Start ()
     {
@@ -95,11 +97,11 @@ public class PlayerController : MonoBehaviour
 			AnimationState ("Attack", false);
 		}
 
-        if (PlayerCharacter == null && PlayerContainer == null)
-        {
-            // Should make movement speed of character and game object that the camera is following stop after death but is not working properly
-            speed = 0;
-        }
+
+		if (playerDeath.HasDied == true) 
+		{
+			speed = 0;
+		}
 	}
 
 

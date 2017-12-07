@@ -15,7 +15,7 @@ public class DestroyWhenHit : MonoBehaviour {
 	void Start () 
 	{
         // Finds script for score
-        GameObject textScritpingObject = GameObject.FindWithTag("Score");
+        GameObject textScritpingObject = GameObject.FindWithTag("Display");
         if (textScritpingObject != null)
         {
             textScripting = textScritpingObject.GetComponent<TextScripting>();

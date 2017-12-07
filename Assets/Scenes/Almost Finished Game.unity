@@ -145,7 +145,6 @@ GameObject:
   m_Component:
   - component: {fileID: 284403797}
   - component: {fileID: 284403796}
-  - component: {fileID: 284403798}
   m_Layer: 0
   m_Name: Score
   m_TagString: Score
@@ -189,25 +188,6 @@ Transform:
   m_Father: {fileID: 465365928}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &284403798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 284403795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9699c2c26d81d4846a08ab2a71732081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoretext: {fileID: 284403796}
-  restartText: {fileID: 1185079802}
-  gameOverText: {fileID: 1784406601}
-  startText: {fileID: 2071347357}
-  winText: {fileID: 0}
-  PlayerCharacter: {fileID: 0}
-  Winner: {fileID: 0}
-  HasDied: 0
 --- !u!1 &288879948
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +531,7 @@ MonoBehaviour:
   whatIsGrounded:
     serializedVersion: 2
     m_Bits: 4096
+  playerDeath: {fileID: 1342080757}
 --- !u!70 &401691605
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -625,7 +606,7 @@ GameObject:
   - component: {fileID: 465365929}
   m_Layer: 0
   m_Name: Display
-  m_TagString: Untagged
+  m_TagString: Display
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -784,7 +765,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1185079803}
   - component: {fileID: 1185079802}
-  - component: {fileID: 1185079804}
   m_Layer: 0
   m_Name: Restart
   m_TagString: Untagged
@@ -828,25 +808,6 @@ Transform:
   m_Father: {fileID: 465365928}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1185079804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1185079801}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9699c2c26d81d4846a08ab2a71732081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoretext: {fileID: 284403796}
-  restartText: {fileID: 1185079802}
-  gameOverText: {fileID: 1784406601}
-  startText: {fileID: 2071347357}
-  winText: {fileID: 0}
-  PlayerCharacter: {fileID: 401691598}
-  Winner: {fileID: 0}
-  HasDied: 0
 --- !u!1 &1342080755
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +821,6 @@ GameObject:
   - component: {fileID: 1342080759}
   - component: {fileID: 1342080757}
   - component: {fileID: 1342080758}
-  - component: {fileID: 1342080762}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
@@ -929,6 +889,7 @@ MonoBehaviour:
   whatIsGrounded:
     serializedVersion: 2
     m_Bits: 4096
+  playerDeath: {fileID: 1342080757}
 --- !u!50 &1342080759
 Rigidbody2D:
   serializedVersion: 4
@@ -1008,25 +969,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
---- !u!114 &1342080762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1342080755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9699c2c26d81d4846a08ab2a71732081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoretext: {fileID: 284403796}
-  restartText: {fileID: 1185079802}
-  gameOverText: {fileID: 1784406601}
-  startText: {fileID: 2071347357}
-  winText: {fileID: 0}
-  PlayerCharacter: {fileID: 401691598}
-  Winner: {fileID: 0}
-  HasDied: 0
 --- !u!1 &1481617458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,7 +1206,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1784406602}
   - component: {fileID: 1784406601}
-  - component: {fileID: 1784406603}
   m_Layer: 0
   m_Name: Game Over
   m_TagString: Untagged
@@ -1308,25 +1249,6 @@ Transform:
   m_Father: {fileID: 465365928}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1784406603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1784406600}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9699c2c26d81d4846a08ab2a71732081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoretext: {fileID: 284403796}
-  restartText: {fileID: 1185079802}
-  gameOverText: {fileID: 1784406601}
-  startText: {fileID: 2071347357}
-  winText: {fileID: 0}
-  PlayerCharacter: {fileID: 401691598}
-  Winner: {fileID: 0}
-  HasDied: 0
 --- !u!1 &1784749640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1437,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0

@@ -8,6 +8,7 @@ TagManager:
   - Boundary
   - Shot
   - Score
+  - Display
   layers:
   - Default
   - TransparentFX
