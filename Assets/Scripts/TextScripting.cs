@@ -57,15 +57,6 @@ public class TextScripting : MonoBehaviour {
             restartText.text = "Press 'R' to Try Again";
             restart = true;
         }
-
-//        if (restart)
-//        {
-//            // Restart bool is true and when you press "R" you reload the level
-//            if (Input.GetKey(KeyCode.R))
-//            {
-//                Application.LoadLevel (Application.loadedLevel);
-//            }
-//        }
 	}
 
     public void AddScore (int newScoreValue)
